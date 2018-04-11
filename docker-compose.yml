@@ -1,0 +1,27 @@
+version: '2'
+services:
+  monitor:
+    container_name: monitor-data
+    image: graphiteapp/graphite-statsd
+
+  grafana:
+    container_name: monitor-exhibitor
+    image: grafana/grafana:4.2.0
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/data/grafana:/var/lib/grafana"
+    links:
+      - monitor
+    environment:
+      - GF_USERS_ALLOW_SIGN_UP=false
+  
+  monitor_feeder:
+    container_name: monitor-feeder
+    image: monitor-feeder
+    build: ./feeder
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+    links:
+        - monitor
