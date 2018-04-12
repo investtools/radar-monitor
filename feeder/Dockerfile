@@ -21,4 +21,4 @@ RUN bundle install
 
 COPY ./src/ ./src/
 
-CMD ruby ./src/monitor.rb
+CMD ruby ./src/system-monitor.rb

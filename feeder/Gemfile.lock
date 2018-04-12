@@ -7,6 +7,7 @@ GEM
     excon (0.62.0)
     multi_json (1.13.1)
     statsd-ruby (1.4.0)
+    systeminformation (0.1.1)
 
 PLATFORMS
   ruby
@@ -14,6 +15,7 @@ PLATFORMS
 DEPENDENCIES
   docker-api
   statsd-ruby
+  systeminformation
 
 BUNDLED WITH
    1.14.6

@@ -66,7 +66,6 @@ def analyze_container(container)
   end
 
   result
-
 end
 
 def containers
@@ -75,7 +74,7 @@ end
 
 hostname = Docker.info["Name"][/\w+/] # Obtém nome do subdomínio (homolog; radar...)
 
-STDERR.puts "#{Time.now} Starting Monitor"
+STDERR.puts "#{Time.now} Starting Monitor of Docker Containers"
 
 while true
 
@@ -93,5 +92,5 @@ while true
     STDERR.puts e.backtrace
   end
 
-  sleep 5
+  sleep 60
 end
