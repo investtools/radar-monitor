@@ -18,6 +18,7 @@ services:
       - monitor
     environment:
       - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=briangann-gauge-panel
   
   monitor_feeder:
     container_name: monitor-feeder
