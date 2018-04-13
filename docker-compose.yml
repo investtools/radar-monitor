@@ -3,6 +3,8 @@ services:
   monitor:
     container_name: monitor-data
     image: graphiteapp/graphite-statsd
+    ports:
+      - "8000:80"
 
   grafana:
     container_name: monitor-exhibitor
